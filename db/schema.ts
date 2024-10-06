@@ -15,11 +15,14 @@ export const statusEnum = pgEnum(
 
 export const Invoices = pgTable("invoices", {
   id: serial("id").primaryKey().notNull(),
-  createTs: timestamp("createTs", { withTimezone: true })
-    .defaultNow()
-    .notNull(),
+  createTs: timestamp("createTs").defaultNow().notNull(),
   value: integer("value").notNull(),
   description: text("description").notNull(),
+  userId: text("userId").notNull(),
+  organizationId: text("organizationId"),
+  customerId: integer("customerId")
+    .notNull()
+    .references(() => Customers.id),
   status: statusEnum("status").notNull(),
 });
 
