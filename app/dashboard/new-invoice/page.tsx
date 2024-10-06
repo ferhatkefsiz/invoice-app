@@ -3,6 +3,8 @@
 import { type SyntheticEvent, useState } from "react";
 import { useFormStatus } from "react-dom";
 
+import { createAction } from "@/app/actions";
+
 import { LoaderCircle } from "lucide-react";
 
 import { Input } from "@/components/ui/input";
@@ -36,7 +38,11 @@ export default function NewInvoicePage() {
         </h1>
       </div>
 
-      <form onSubmit={handleOnSubmit} className="grid gap-4 max-w-xs mt-4">
+      <form
+        action={createAction}
+        onSubmit={handleOnSubmit}
+        className="grid gap-4 max-w-xs mt-4"
+      >
         {error && (
           <p className="bg-red-100 text-sm text-red-800 text-center px-3 py-2 rounded-lg">
             {error}
@@ -82,7 +88,7 @@ export default function NewInvoicePage() {
                 <LoaderCircle className="animate-spin" />
               </span>
             )}
-          </Button>{" "}
+          </Button>
         </div>
       </form>
     </main>
