@@ -14,6 +14,7 @@ export const statusEnum = pgEnum(
 );
 
 export const Invoices = pgTable("invoices", {
+  id: serial("id").primaryKey().notNull(),
   createTs: timestamp("createTs", { withTimezone: true })
     .defaultNow()
     .notNull(),
