@@ -74,7 +74,7 @@ const invoices = [
 
 export default function Dashboard() {
   return (
-    <main className="max-w-5xl mx-auto">
+    <main className="max-w-5xl mx-auto px-5">
       <div className="flex w-full justify-between items-center">
         <h1 className="text-3xl tracking-tighter font-semibold">Invoices</h1>
 
