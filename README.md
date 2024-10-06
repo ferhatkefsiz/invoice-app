@@ -26,3 +26,7 @@ After the hit next click, next page will show all different credentials to conne
 ![](/public/images/screenshots/sh_xata_credentials.png)
 
 > Note: Do not try to connect to the database using the credentials shown in the image above. It is just for demonstration purposes.
+
+## Resend Email
+
+Go to [resend dashboard](https://resend.com/) then login and create a api key, then add the api key to the .env.local file.
