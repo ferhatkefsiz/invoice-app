@@ -1,5 +1,7 @@
 "use client";
 
+import Form from "next/form";
+
 import { type SyntheticEvent, useState } from "react";
 import { useFormStatus } from "react-dom";
 
@@ -19,9 +21,9 @@ export default function NewInvoicePage() {
   const [error, setError] = useState<string>();
 
   async function handleOnSubmit(event: SyntheticEvent) {
-    event.preventDefault();
+    /*  event.preventDefault();
     setError("Submission disabled for demo.");
-    return;
+    return; */
 
     if (state === "pending") {
       event.preventDefault();
@@ -38,7 +40,7 @@ export default function NewInvoicePage() {
         </h1>
       </div>
 
-      <form
+      <Form
         action={createAction}
         onSubmit={handleOnSubmit}
         className="grid gap-4 max-w-xs mt-4"
@@ -90,7 +92,7 @@ export default function NewInvoicePage() {
             )}
           </Button>
         </div>
-      </form>
+      </Form>
     </main>
   );
 }
