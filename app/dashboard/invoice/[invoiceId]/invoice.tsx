@@ -1,8 +1,12 @@
 "use client";
-import { ChevronDown, CreditCard, Ellipsis, Trash2 } from "lucide-react";
+
+import Link from "next/link";
 import { useOptimistic } from "react";
+import { deleteInvoiceAction, updateStatusAction } from "@/app/actions";
+import type { Customers, Invoices } from "@/db/schema";
 
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -18,14 +22,12 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import type { Customers, Invoices } from "@/db/schema";
+
 import { cn } from "@/lib/utils";
 
-import { Button } from "@/components/ui/button";
-
-import { deleteInvoiceAction, updateStatusAction } from "@/app/actions";
-import Link from "next/link";
 import { AVAILABLE_STATUSES } from "@/consts";
+
+import { ChevronDown, CreditCard, Ellipsis, Trash2 } from "lucide-react";
 
 interface InvoiceProps {
   invoice: typeof Invoices.$inferSelect & {
